@@ -10,7 +10,7 @@ class FileRenamer:
     def __init__(self, root):
         self.root = root
         self.root.title("File Renamer")
-        self.root.geometry("700x600")
+        self.root.geometry("800x600")
 
         small_icon = tk.PhotoImage(data=b64decode(ICON_16))
         large_icon = tk.PhotoImage(data=b64decode(ICON_32))
@@ -88,9 +88,10 @@ class FileRenamer:
                                command=lambda: self.sort_column('type', False))
         self.file_tree.heading('selected', text='Selected',
                                command=lambda: self.sort_column('selected', False))
-        self.file_tree.column('filepath', width=250)
-        self.file_tree.column('filename', width=150)
+        self.file_tree.column('filepath', width=325)
+        self.file_tree.column('filename', width=325)
         self.file_tree.column('type', width=50)
+        self.file_tree.column('selected', width=50)
         self.file_tree.grid(row=0, column=0, sticky="nsew")
 
         # Dictionary to track sorting state for each column
